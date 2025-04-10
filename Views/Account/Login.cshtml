@@ -1,0 +1,114 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Giriş</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('/Images/backgrounds/a.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: flex-end; /* Kutuyu sağa al */
+            align-items: center;
+            height: 100vh;
+            padding-right: 100px;
+        }
+
+        .login-box {
+            width: 500px;
+            height: auto; /* Yüksekliği otomatik ayarlayın */
+            background-color: white; /* Hafif beyaz arka plan rengi */
+            backdrop-filter: blur(20px); /* Buzlu cam efekti */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(255, 255, 255); /* Daha belirgin ve parlak gölge */
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px; /* Daha tutarlı bir boyut için padding artırıldı */
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Boyutlandırmayı kutu modeline göre ayarlayın */
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5); /* Gölge efekti eklendi */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Geçiş efekti eklendi */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Hover efekti */
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.7); /* Hover sırasında gölgeyi artır */
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Giriş Yap</h2>
+            <form method="post">
+            <label for="username">Kullanıcı Adı</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="firmalar">Firma Seç</label>
+                <select id="firmalar" name="firmalar" required>
+                    <option value="" disabled selected>Firma Seçin</option>
+                    <option value="1">SAMRUK SOFT A.Ş</option>
+                    <option value="2">ÖZKAYA HOLDİNG A.Ş</option>
+                    <option value="3">GBG TURİZM OTELCİLİK LDT. ŞTİ.</option>
+                </select>
+
+                <label for="password">Şifre</label>
+                <input type="password" id="password" name="password" required>
+
+                <a href="@Url.Action("Home", "Home")"><button type="button">Giriş</button></a>
+            </form>
+
+            <div class="register-link"><p>Hesabın yok mu? <a asp-controller="Account" asp-action="Register">Kaydol</a>
+                </p>
+                
+            </div>
+        </div>
+    </div></body>

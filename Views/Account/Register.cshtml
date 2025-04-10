@@ -1,0 +1,127 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kayıt Ol</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('/Images/backgrounds/a.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100vh;
+            padding-right: 100px;
+        }
+
+        .login-box {
+            width: 500px;
+            height: auto;
+            background-color: white;
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(255, 255, 255);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.7);
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Kayıt Ol</h2>
+            <form method="post" asp-action="Register">
+                <label for="ad">Ad</label>
+                <input type="text" id="ad" name="ad" required>
+
+                <label for="soyad">Soyad</label>
+                <input type="text" id="soyad" name="soyad" required>
+
+                <label for="email">E-Posta</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefon">Telefon</label>
+                <input type="tel" id="telefon" name="telefon" required>
+
+                <label for="firmalar">Firma Seç</label>
+                <select id="firmalar" name="firmalar" required>
+                    <option value="" disabled selected>Firma Seçin</option>
+                    <option value="1">Firma A</option>
+                    <option value="2">Firma B</option>
+                    <option value="3">Firma C</option>
+                </select>
+
+                <label for="sifre">Şifre</label>
+                <input type="password" id="sifre" name="sifre" required>
+
+                <label for="sifreTekrar">Şifre Tekrar</label>
+                <input type="password" id="sifreTekrar" name="sifreTekrar" required>
+
+                <button type="submit">Kayıt Ol</button>
+            </form>
+
+            <div class="register-link">
+                Zaten hesabınız var mı? <a href="/Account/Login">Giriş Yap</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
