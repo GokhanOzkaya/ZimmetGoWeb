@@ -1,8 +1,11 @@
-public class DemirbasDemirbasTuru
+namespace ZimmetGo.Models
 {
-    public int DemirbasID { get; set; }
-    public Demirbas Demirbas { get; set; }
+    public class DemirbasDemirbasTuru
+    {
+        public int? DemirbasID { get; set; }  // Nullable hale getirildi
+        public Demirbas Demirbas { get; set; }  // Nullable zaten
 
-    public int DemirbasTuruID { get; set; }
-    public DemirbasTuru DemirbasTuru { get; set; }
+        public int? DemirbasTuruID { get; set; }  // Nullable hale getirildi
+        public DemirbasTuru DemirbasTuru { get; set; }  // Nullable zaten
+    }
 }

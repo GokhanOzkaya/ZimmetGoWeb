@@ -1,11 +1,30 @@
-public class Firma
-{
-    public int FirmaID { get; set; }
-    public string FirmaAdı { get; set; }
-    public string Adres { get; set; }
-    public string Telefon { get; set; }
-    public string Email { get; set; }
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-    public ICollection<Kullanici> Kullanicilar { get; set; }
-    public ICollection<Departman> Departmanlar { get; set; }
+namespace ZimmetGo.Models
+{
+    public class Firma
+    {
+        [Key]
+        public int FirmaID { get; set; }
+
+        [Required(ErrorMessage = "Firma adı zorunludur.")]
+        [Display(Name = "Firma Adı")]
+        public string FirmaAdi { get; set; }
+
+        [Display(Name = "Adres")]
+        public string Adres { get; set; }
+
+        [Display(Name = "Telefon")]
+        public string Telefon { get; set; }
+
+        [Display(Name = "E-posta")]
+        [EmailAddress(ErrorMessage = "Geçerli bir e-posta adresi giriniz.")]
+        public string Email { get; set; }
+
+        [Display(Name = "Vergi Numarası")]
+        public string VergiNo { get; set; }
+
+        public virtual ICollection<Kullanici> Kullanicilar { get; set; }
+    }
 }

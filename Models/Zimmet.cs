@@ -1,15 +1,42 @@
-public class Zimmet
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ZimmetGo.Models
 {
-    public int ZimmetID { get; set; }
+    public class Zimmet
+    {
+        [Key]
+        public int ZimmetID { get; set; }
 
-    public int DemirbasID { get; set; }
-    public Demirbas Demirbas { get; set; }
+        [Required]
+        public int DemirbasID { get; set; }
 
-    public int KullaniciID { get; set; }
-    public Kullanici Kullanici { get; set; }
+        [Required]
+        public int KullaniciID { get; set; }
 
-    public DateTime ZimmetTarihi { get; set; }
-    public DateTime? IadeTarihi { get; set; }
-    public string Notlar { get; set; }
-    public bool Aktif { get; set; }
+        [Required(ErrorMessage = "Zimmet tarihi zorunludur.")]
+        [Display(Name = "Zimmet Tarihi")]
+        [DataType(DataType.Date)]
+        public DateTime ZimmetTarihi { get; set; }
+
+        [Display(Name = "İade Tarihi")]
+        [DataType(DataType.Date)]
+        public DateTime? IadeTarihi { get; set; }
+
+        [Display(Name = "Durum")]
+        public string Durum { get; set; }
+
+        [Display(Name = "Açıklama")]
+        public string Aciklama { get; set; }
+
+        [Display(Name = "Son Güncelleme")]
+        public DateTime SonGuncelleme { get; set; }
+
+        [ForeignKey("DemirbasID")]
+        public virtual Demirbas Demirbas { get; set; }
+
+        [ForeignKey("KullaniciID")]
+        public virtual Kullanici Kullanici { get; set; }
+    }
 }

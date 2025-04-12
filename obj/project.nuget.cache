@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U28g3/iKVOo=",
+  "dgSpecHash": "cc1kSbPWs3Y=",
   "success": true,
-  "projectFilePath": "/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/ZimmetGo.csproj",
+  "projectFilePath": "/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/ZimmetGo.csproj",
   "expectedPackageFiles": [
     "/Users/ozkaya.gkhn/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/ozkaya.gkhn/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZimmetGo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b580b978102a716d863d91c45f77ce6ac1445c4f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZimmetGo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZimmetGo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

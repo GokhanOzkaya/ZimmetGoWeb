@@ -1,0 +1,515 @@
+@model IEnumerable<ZimmetGo.Models.Demirbas>
+
+@{
+    ViewData["Title"] = "Demirbaş Listesi";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Demirbaş Listesi</h2>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#yeniDemirbasModal">
+            <i class="bi bi-plus-lg me-2"></i>Yeni Demirbaş
+        </button>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Demirbaş Adı</th>
+                            <th>Kategori</th>
+                            <th>Seri No</th>
+                            <th>Alım Tarihi</th>
+                            <th>Değer</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Laptop Dell XPS 15</td>
+                            <td>Bilgisayar</td>
+                            <td>XPS15-2024-001</td>
+                            <td>01.01.2024</td>
+                            <td>35.000 ₺</td>
+                            <td><span class="badge bg-success">Zimmetli</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>iPhone 13 Pro</td>
+                            <td>Telefon</td>
+                            <td>IP13-2024-002</td>
+                            <td>15.02.2024</td>
+                            <td>45.000 ₺</td>
+                            <td><span class="badge bg-success">Zimmetli</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>HP LaserJet Pro</td>
+                            <td>Yazıcı</td>
+                            <td>HP-2024-003</td>
+                            <td>01.03.2024</td>
+                            <td>15.000 ₺</td>
+                            <td><span class="badge bg-warning">Bakımda</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>MacBook Pro M2</td>
+                            <td>Bilgisayar</td>
+                            <td>MBP-2024-004</td>
+                            <td>10.03.2024</td>
+                            <td>65.000 ₺</td>
+                            <td><span class="badge bg-success">Zimmetli</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>iPad Pro 12.9</td>
+                            <td>Tablet</td>
+                            <td>IPP-2024-005</td>
+                            <td>20.03.2024</td>
+                            <td>40.000 ₺</td>
+                            <td><span class="badge bg-success">Zimmetli</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Samsung Galaxy S23</td>
+                            <td>Telefon</td>
+                            <td>SGS-2024-006</td>
+                            <td>05.04.2024</td>
+                            <td>35.000 ₺</td>
+                            <td><span class="badge bg-secondary">Müsait</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Dell XPS 13</td>
+                            <td>Bilgisayar</td>
+                            <td>XPS13-2024-007</td>
+                            <td>15.04.2024</td>
+                            <td>30.000 ₺</td>
+                            <td><span class="badge bg-success">Zimmetli</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Logitech MX Master 3</td>
+                            <td>Fare</td>
+                            <td>LMX-2024-008</td>
+                            <td>01.05.2024</td>
+                            <td>2.500 ₺</td>
+                            <td><span class="badge bg-success">Zimmetli</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Apple Watch Series 8</td>
+                            <td>Akıllı Saat</td>
+                            <td>AWS-2024-009</td>
+                            <td>10.05.2024</td>
+                            <td>15.000 ₺</td>
+                            <td><span class="badge bg-secondary">Müsait</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Canon EOS R5</td>
+                            <td>Kamera</td>
+                            <td>CER-2024-010</td>
+                            <td>15.05.2024</td>
+                            <td>85.000 ₺</td>
+                            <td><span class="badge bg-success">Zimmetli</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Microsoft Surface Pro 9</td>
+                            <td>Tablet</td>
+                            <td>MSP-2024-011</td>
+                            <td>01.06.2024</td>
+                            <td>45.000 ₺</td>
+                            <td><span class="badge bg-success">Zimmetli</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Sony WH-1000XM5</td>
+                            <td>Kulaklık</td>
+                            <td>SWH-2024-012</td>
+                            <td>10.06.2024</td>
+                            <td>8.000 ₺</td>
+                            <td><span class="badge bg-secondary">Müsait</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>LG 27GP850-B</td>
+                            <td>Monitör</td>
+                            <td>LGP-2024-013</td>
+                            <td>01.07.2024</td>
+                            <td>12.000 ₺</td>
+                            <td><span class="badge bg-success">Zimmetli</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Logitech StreamCam</td>
+                            <td>Kamera</td>
+                            <td>LSC-2024-014</td>
+                            <td>15.07.2024</td>
+                            <td>5.000 ₺</td>
+                            <td><span class="badge bg-success">Zimmetli</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Razer Blade 15</td>
+                            <td>Bilgisayar</td>
+                            <td>RZB-2024-015</td>
+                            <td>01.08.2024</td>
+                            <td>55.000 ₺</td>
+                            <td><span class="badge bg-success">Zimmetli</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Yeni Demirbaş Modal -->
+<div class="modal fade" id="yeniDemirbasModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Yeni Demirbaş Ekle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Demirbaş Adı</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Kategori</label>
+                        <select class="form-select">
+                            <option>Bilgisayar</option>
+                            <option>Telefon</option>
+                            <option>Yazıcı</option>
+                            <option>Tablet</option>
+                            <option>Kamera</option>
+                            <option>Kulaklık</option>
+                            <option>Monitör</option>
+                            <option>Fare</option>
+                            <option>Akıllı Saat</option>
+                            <option>Mobilya</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Seri No</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Alım Tarihi</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Değer</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control">
+                            <span class="input-group-text">₺</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Açıklama</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Düzenle Modal -->
+<div class="modal fade" id="duzenleModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Demirbaş Düzenle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Demirbaş Adı</label>
+                        <input type="text" class="form-control" value="Laptop Dell XPS 15">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Kategori</label>
+                        <select class="form-select">
+                            <option selected>Bilgisayar</option>
+                            <option>Telefon</option>
+                            <option>Yazıcı</option>
+                            <option>Tablet</option>
+                            <option>Kamera</option>
+                            <option>Kulaklık</option>
+                            <option>Monitör</option>
+                            <option>Fare</option>
+                            <option>Akıllı Saat</option>
+                            <option>Mobilya</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Seri No</label>
+                        <input type="text" class="form-control" value="XPS15-2024-001">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Alım Tarihi</label>
+                        <input type="date" class="form-control" value="2024-01-01">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Değer</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" value="35000">
+                            <span class="input-group-text">₺</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Durum</label>
+                        <select class="form-select">
+                            <option selected>Zimmetli</option>
+                            <option>Müsait</option>
+                            <option>Bakımda</option>
+                            <option>Arızalı</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Açıklama</label>
+                        <textarea class="form-control" rows="3">Yazılım geliştirme ekibi için alınan yüksek performanslı laptop.</textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Detay Modal -->
+<div class="modal fade" id="detayModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Demirbaş Detayları</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Demirbaş Adı:</div>
+                    <div class="col-8">Laptop Dell XPS 15</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Kategori:</div>
+                    <div class="col-8">Bilgisayar</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Seri No:</div>
+                    <div class="col-8">XPS15-2024-001</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Alım Tarihi:</div>
+                    <div class="col-8">01.01.2024</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Değer:</div>
+                    <div class="col-8">35.000 ₺</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Durum:</div>
+                    <div class="col-8"><span class="badge bg-success">Zimmetli</span></div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Mevcut Kullanıcı:</div>
+                    <div class="col-8">Ahmet Yılmaz</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Zimmet Tarihi:</div>
+                    <div class="col-8">01.01.2024</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Açıklama:</div>
+                    <div class="col-8">Yazılım geliştirme ekibi için alınan yüksek performanslı laptop.</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div> 

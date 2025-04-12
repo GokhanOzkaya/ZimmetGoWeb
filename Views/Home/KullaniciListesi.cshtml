@@ -1,18 +1,732 @@
-@model TModel
+@model IEnumerable<ZimmetGo.Models.Kullanici>
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Kullanıcı Listesi";
 }
 
-<!DOCTYPE html>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Kullanıcı Listesi</h2>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#yeniKullaniciModal">
+            <i class="bi bi-plus-lg me-2"></i>Yeni Kullanıcı
+        </button>
+    </div>
 
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Ad</th>
+                            <th>Soyad</th>
+                            <th>E-posta</th>
+                            <th>Telefon</th>
+                            <th>Rol</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Ahmet</td>
+                            <td>Yılmaz</td>
+                            <td>ahmet.yilmaz@sirket.com</td>
+                            <td>0532 123 4567</td>
+                            <td>Yazılım Geliştirici</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mehmet</td>
+                            <td>Demir</td>
+                            <td>mehmet.demir@sirket.com</td>
+                            <td>0533 234 5678</td>
+                            <td>Sistem Yöneticisi</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Ayşe</td>
+                            <td>Kaya</td>
+                            <td>ayse.kaya@sirket.com</td>
+                            <td>0534 345 6789</td>
+                            <td>İK Uzmanı</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Zeynep</td>
+                            <td>Şahin</td>
+                            <td>zeynep.sahin@sirket.com</td>
+                            <td>0535 456 7890</td>
+                            <td>Proje Yöneticisi</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mustafa</td>
+                            <td>Öztürk</td>
+                            <td>mustafa.ozturk@sirket.com</td>
+                            <td>0536 567 8901</td>
+                            <td>Veri Analisti</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Fatma</td>
+                            <td>Yıldız</td>
+                            <td>fatma.yildiz@sirket.com</td>
+                            <td>0537 678 9012</td>
+                            <td>Muhasebe Uzmanı</td>
+                            <td><span class="badge bg-warning">İzinde</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Ali</td>
+                            <td>Kılıç</td>
+                            <td>ali.kilic@sirket.com</td>
+                            <td>0538 789 0123</td>
+                            <td>Satış Temsilcisi</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Elif</td>
+                            <td>Demir</td>
+                            <td>elif.demir@sirket.com</td>
+                            <td>0539 890 1234</td>
+                            <td>Pazarlama Uzmanı</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Burak</td>
+                            <td>Aydın</td>
+                            <td>burak.aydin@sirket.com</td>
+                            <td>0530 901 2345</td>
+                            <td>Yazılım Geliştirici</td>
+                            <td><span class="badge bg-danger">Pasif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Selin</td>
+                            <td>Yılmaz</td>
+                            <td>selin.yilmaz@sirket.com</td>
+                            <td>0531 012 3456</td>
+                            <td>İçerik Editörü</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Onur</td>
+                            <td>Demir</td>
+                            <td>onur.demir@sirket.com</td>
+                            <td>0532 123 4567</td>
+                            <td>Grafik Tasarımcı</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Deniz</td>
+                            <td>Kaya</td>
+                            <td>deniz.kaya@sirket.com</td>
+                            <td>0533 234 5678</td>
+                            <td>Müşteri İlişkileri</td>
+                            <td><span class="badge bg-warning">İzinde</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Mert</td>
+                            <td>Öztürk</td>
+                            <td>mert.ozturk@sirket.com</td>
+                            <td>0534 345 6789</td>
+                            <td>Yazılım Geliştirici</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Gizem</td>
+                            <td>Yıldız</td>
+                            <td>gizem.yildiz@sirket.com</td>
+                            <td>0535 456 7890</td>
+                            <td>İK Uzmanı</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Emre</td>
+                            <td>Demir</td>
+                            <td>emre.demir@sirket.com</td>
+                            <td>0536 567 8901</td>
+                            <td>Sistem Yöneticisi</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Kaan</td>
+                            <td>Yılmaz</td>
+                            <td>kaan.yilmaz@sirket.com</td>
+                            <td>0537 678 9012</td>
+                            <td>Yazılım Geliştirici</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>Aslı</td>
+                            <td>Kaya</td>
+                            <td>asli.kaya@sirket.com</td>
+                            <td>0538 789 0123</td>
+                            <td>Proje Yöneticisi</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>Murat</td>
+                            <td>Öztürk</td>
+                            <td>murat.ozturk@sirket.com</td>
+                            <td>0539 890 1234</td>
+                            <td>Veri Analisti</td>
+                            <td><span class="badge bg-warning">İzinde</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>Ebru</td>
+                            <td>Demir</td>
+                            <td>ebru.demir@sirket.com</td>
+                            <td>0530 901 2345</td>
+                            <td>Muhasebe Uzmanı</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Serkan</td>
+                            <td>Yıldız</td>
+                            <td>serkan.yildiz@sirket.com</td>
+                            <td>0531 012 3456</td>
+                            <td>Satış Temsilcisi</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>Derya</td>
+                            <td>Kılıç</td>
+                            <td>derya.kilic@sirket.com</td>
+                            <td>0532 123 4567</td>
+                            <td>Pazarlama Uzmanı</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>Berk</td>
+                            <td>Aydın</td>
+                            <td>berk.aydin@sirket.com</td>
+                            <td>0533 234 5678</td>
+                            <td>Yazılım Geliştirici</td>
+                            <td><span class="badge bg-danger">Pasif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>Merve</td>
+                            <td>Yılmaz</td>
+                            <td>merve.yilmaz@sirket.com</td>
+                            <td>0534 345 6789</td>
+                            <td>İçerik Editörü</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>Can</td>
+                            <td>Demir</td>
+                            <td>can.demir@sirket.com</td>
+                            <td>0535 456 7890</td>
+                            <td>Grafik Tasarımcı</td>
+                            <td><span class="badge bg-success">Aktif</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>Zeynep</td>
+                            <td>Kaya</td>
+                            <td>zeynep.kaya@sirket.com</td>
+                            <td>0536 567 8901</td>
+                            <td>Müşteri İlişkileri</td>
+                            <td><span class="badge bg-warning">İzinde</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detayModal">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#duzenleModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
-</body>
-</html>
+
+<!-- Yeni Kullanıcı Modal -->
+<div class="modal fade" id="yeniKullaniciModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Yeni Kullanıcı Ekle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Ad</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Soyad</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">E-posta</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Telefon</label>
+                        <input type="tel" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Rol</label>
+                        <select class="form-select">
+                            <option>Yazılım Geliştirici</option>
+                            <option>Sistem Yöneticisi</option>
+                            <option>İK Uzmanı</option>
+                            <option>Proje Yöneticisi</option>
+                            <option>Veri Analisti</option>
+                            <option>Muhasebe Uzmanı</option>
+                            <option>Satış Temsilcisi</option>
+                            <option>Pazarlama Uzmanı</option>
+                            <option>İçerik Editörü</option>
+                            <option>Grafik Tasarımcı</option>
+                            <option>Müşteri İlişkileri</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Departman</label>
+                        <select class="form-select">
+                            <option>Yazılım</option>
+                            <option>İK</option>
+                            <option>Finans</option>
+                            <option>Pazarlama</option>
+                            <option>Satış</option>
+                            <option>Müşteri Hizmetleri</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Şifre</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Şifre Tekrar</label>
+                        <input type="password" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Düzenle Modal -->
+<div class="modal fade" id="duzenleModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Kullanıcı Düzenle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Ad</label>
+                        <input type="text" class="form-control" value="Ahmet">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Soyad</label>
+                        <input type="text" class="form-control" value="Yılmaz">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">E-posta</label>
+                        <input type="email" class="form-control" value="ahmet.yilmaz@sirket.com">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Telefon</label>
+                        <input type="tel" class="form-control" value="0532 123 4567">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Rol</label>
+                        <select class="form-select">
+                            <option selected>Yazılım Geliştirici</option>
+                            <option>Sistem Yöneticisi</option>
+                            <option>İK Uzmanı</option>
+                            <option>Proje Yöneticisi</option>
+                            <option>Veri Analisti</option>
+                            <option>Muhasebe Uzmanı</option>
+                            <option>Satış Temsilcisi</option>
+                            <option>Pazarlama Uzmanı</option>
+                            <option>İçerik Editörü</option>
+                            <option>Grafik Tasarımcı</option>
+                            <option>Müşteri İlişkileri</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Departman</label>
+                        <select class="form-select">
+                            <option selected>Yazılım</option>
+                            <option>İK</option>
+                            <option>Finans</option>
+                            <option>Pazarlama</option>
+                            <option>Satış</option>
+                            <option>Müşteri Hizmetleri</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Durum</label>
+                        <select class="form-select">
+                            <option selected>Aktif</option>
+                            <option>Pasif</option>
+                            <option>İzinde</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Detay Modal -->
+<div class="modal fade" id="detayModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Kullanıcı Detayları</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Ad:</div>
+                    <div class="col-8">Ahmet</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Soyad:</div>
+                    <div class="col-8">Yılmaz</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">E-posta:</div>
+                    <div class="col-8">ahmet.yilmaz@sirket.com</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Telefon:</div>
+                    <div class="col-8">0532 123 4567</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Rol:</div>
+                    <div class="col-8">Yazılım Geliştirici</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Departman:</div>
+                    <div class="col-8">Yazılım</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Durum:</div>
+                    <div class="col-8"><span class="badge bg-success">Aktif</span></div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Son Giriş:</div>
+                    <div class="col-8">01.01.2024 09:15</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4 fw-bold">Kayıt Tarihi:</div>
+                    <div class="col-8">01.01.2024</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>

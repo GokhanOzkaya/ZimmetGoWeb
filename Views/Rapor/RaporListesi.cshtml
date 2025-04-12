@@ -1,0 +1,258 @@
+@{
+    ViewData["Title"] = "Rapor Listesi";
+}
+
+<style>
+    .card {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border: 2px solid #dee2e6;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+        background: linear-gradient(45deg, #800020, #4B0082);
+        color: white;
+        font-weight: 500;
+        padding: 15px 20px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .search-bar {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .search-bar input {
+        width: 300px;
+        border-radius: 20px;
+        padding: 10px 20px;
+        border: 1px solid #e9ecef;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .search-bar input:focus {
+        box-shadow: 0 0 0 0.25rem rgba(128, 0, 32, 0.25);
+        border-color: #800020;
+    }
+
+    .btn-search {
+        border-radius: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(45deg, #800020, #4B0082);
+        border: none;
+        color: white;
+        transition: all 0.3s ease;
+        height: 42px;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-search:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
+    }
+
+    .btn-add {
+        border-radius: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(45deg, #800020, #4B0082);
+        border: none;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .btn-add:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
+        color: white;
+    }
+
+    .page-title {
+        color: #800020;
+        font-weight: 600;
+        margin: 0;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .page-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(45deg, #800020, #4B0082);
+    }
+
+    .alert {
+        border-radius: 8px;
+        border: none;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .report-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #800020;
+    }
+
+    .report-title {
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #800020;
+    }
+
+    .report-description {
+        color: #6c757d;
+        margin-bottom: 15px;
+    }
+
+    .btn-report {
+        border-radius: 20px;
+        padding: 8px 15px;
+        background: linear-gradient(45deg, #800020, #4B0082);
+        border: none;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .btn-report:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
+        color: white;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="header-container">
+        <h2 class="page-title">@ViewData["Title"]</h2>
+        <div class="search-bar">
+            <input type="text" class="form-control" placeholder="Rapor Ara...">
+            <button class="btn btn-search">
+                <i class="bi bi-search me-2"></i>Ara
+            </button>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <button class="btn btn-add">
+            <i class="bi bi-plus-lg me-2"></i>Yeni Rapor
+        </button>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-file-earmark-text me-2"></i>Zimmet Raporu
+                </div>
+                <div class="card-body text-center">
+                    <i class="bi bi-file-earmark-text report-icon"></i>
+                    <h5 class="report-title">Zimmet Raporu</h5>
+                    <p class="report-description">Kullanıcılara zimmetlenen demirbaşların listesi ve durumları</p>
+                    <button class="btn btn-report">
+                        <i class="bi bi-download me-2"></i>İndir
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-file-earmark-text me-2"></i>Demirbaş Raporu
+                </div>
+                <div class="card-body text-center">
+                    <i class="bi bi-box-seam report-icon"></i>
+                    <h5 class="report-title">Demirbaş Raporu</h5>
+                    <p class="report-description">Tüm demirbaşların listesi, durumları ve zimmet bilgileri</p>
+                    <button class="btn btn-report">
+                        <i class="bi bi-download me-2"></i>İndir
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-file-earmark-text me-2"></i>Kullanıcı Raporu
+                </div>
+                <div class="card-body text-center">
+                    <i class="bi bi-people report-icon"></i>
+                    <h5 class="report-title">Kullanıcı Raporu</h5>
+                    <p class="report-description">Tüm kullanıcıların listesi ve zimmet bilgileri</p>
+                    <button class="btn btn-report">
+                        <i class="bi bi-download me-2"></i>İndir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-file-earmark-text me-2"></i>Bakım Raporu
+                </div>
+                <div class="card-body text-center">
+                    <i class="bi bi-tools report-icon"></i>
+                    <h5 class="report-title">Bakım Raporu</h5>
+                    <p class="report-description">Bakımda olan demirbaşların listesi ve bakım durumları</p>
+                    <button class="btn btn-report">
+                        <i class="bi bi-download me-2"></i>İndir
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-file-earmark-text me-2"></i>Lokasyon Raporu
+                </div>
+                <div class="card-body text-center">
+                    <i class="bi bi-geo-alt report-icon"></i>
+                    <h5 class="report-title">Lokasyon Raporu</h5>
+                    <p class="report-description">Lokasyonlara göre demirbaş dağılımı</p>
+                    <button class="btn btn-report">
+                        <i class="bi bi-download me-2"></i>İndir
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-file-earmark-text me-2"></i>Özel Rapor
+                </div>
+                <div class="card-body text-center">
+                    <i class="bi bi-sliders report-icon"></i>
+                    <h5 class="report-title">Özel Rapor</h5>
+                    <p class="report-description">İhtiyaçlarınıza göre özelleştirilmiş rapor oluşturun</p>
+                    <button class="btn btn-report">
+                        <i class="bi bi-gear me-2"></i>Oluştur
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

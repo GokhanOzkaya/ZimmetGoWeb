@@ -1,0 +1,394 @@
+@{
+    ViewData["Title"] = "Ayarlar";
+}
+
+<style>
+    .card {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border: 2px solid #dee2e6;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+        background: linear-gradient(45deg, #800020, #4B0082);
+        color: white;
+        font-weight: 500;
+        padding: 15px 20px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .page-title {
+        color: #800020;
+        font-weight: 600;
+        margin: 0;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .page-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(45deg, #800020, #4B0082);
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #495057;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        padding: 10px 15px;
+        border: 1px solid #ced4da;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #800020;
+        box-shadow: 0 0 0 0.25rem rgba(128, 0, 32, 0.25);
+    }
+
+    .btn-save {
+        border-radius: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(45deg, #800020, #4B0082);
+        border: none;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .btn-save:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
+        color: white;
+    }
+
+    .setting-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #800020;
+    }
+
+    .setting-title {
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #800020;
+    }
+
+    .setting-description {
+        color: #6c757d;
+        margin-bottom: 15px;
+    }
+
+    .nav-tabs {
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    .nav-tabs .nav-link {
+        border: none;
+        color: #495057;
+        font-weight: 500;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-tabs .nav-link:hover {
+        color: #800020;
+        border: none;
+    }
+
+    .nav-tabs .nav-link.active {
+        color: #800020;
+        background-color: transparent;
+        border: none;
+        border-bottom: 3px solid #800020;
+    }
+
+    .tab-content {
+        padding: 20px 0;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="page-title mb-4">@ViewData["Title"]</h2>
+
+    <ul class="nav nav-tabs" id="settingsTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">
+                <i class="bi bi-gear me-2"></i>Genel Ayarlar
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="users" aria-selected="false">
+                <i class="bi bi-people me-2"></i>Kullanıcı Yönetimi
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="inventory-tab" data-bs-toggle="tab" data-bs-target="#inventory" type="button" role="tab" aria-controls="inventory" aria-selected="false">
+                <i class="bi bi-box-seam me-2"></i>Demirbaş Yönetimi
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="notifications-tab" data-bs-toggle="tab" data-bs-target="#notifications" type="button" role="tab" aria-controls="notifications" aria-selected="false">
+                <i class="bi bi-bell me-2"></i>Bildirim Ayarları
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="backup-tab" data-bs-toggle="tab" data-bs-target="#backup" type="button" role="tab" aria-controls="backup" aria-selected="false">
+                <i class="bi bi-cloud-arrow-up me-2"></i>Yedekleme
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="settingsTabsContent">
+        <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-gear me-2"></i>Genel Ayarlar
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="companyName" class="form-label">Şirket Adı</label>
+                            <input type="text" class="form-control" id="companyName" value="ZimmetGo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-posta Adresi</label>
+                            <input type="email" class="form-control" id="email" value="info@zimmetgo.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Telefon</label>
+                            <input type="text" class="form-control" id="phone" value="+90 555 123 4567">
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Adres</label>
+                            <textarea class="form-control" id="address" rows="3">İstanbul, Türkiye</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="language" class="form-label">Dil</label>
+                            <select class="form-select" id="language">
+                                <option value="tr" selected>Türkçe</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="timezone" class="form-label">Saat Dilimi</label>
+                            <select class="form-select" id="timezone">
+                                <option value="Europe/Istanbul" selected>İstanbul (UTC+3)</option>
+                                <option value="Europe/London">Londra (UTC+0)</option>
+                                <option value="America/New_York">New York (UTC-5)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-save">
+                            <i class="bi bi-save me-2"></i>Kaydet
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-people me-2"></i>Kullanıcı Yönetimi
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <button class="btn btn-save mb-3">
+                            <i class="bi bi-person-plus me-2"></i>Yeni Kullanıcı Ekle
+                        </button>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Adı</th>
+                                        <th>Soyadı</th>
+                                        <th>Kullanıcı Adı</th>
+                                        <th>E-posta</th>
+                                        <th>Rol</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Admin</td>
+                                        <td>User</td>
+                                        <td>admin</td>
+                                        <td>admin@zimmetgo.com</td>
+                                        <td>Yönetici</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary me-1">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-box-seam me-2"></i>Demirbaş Yönetimi
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <button class="btn btn-save mb-3">
+                            <i class="bi bi-plus-lg me-2"></i>Yeni Demirbaş Türü Ekle
+                        </button>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Tür Adı</th>
+                                        <th>Açıklama</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Bilgisayar</td>
+                                        <td>Masaüstü ve dizüstü bilgisayarlar</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary me-1">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Telefon</td>
+                                        <td>Cep telefonları ve sabit hatlar</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary me-1">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-bell me-2"></i>Bildirim Ayarları
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                <label class="form-check-label" for="emailNotifications">E-posta Bildirimleri</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="smsNotifications">
+                                <label class="form-check-label" for="smsNotifications">SMS Bildirimleri</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="pushNotifications" checked>
+                                <label class="form-check-label" for="pushNotifications">Uygulama İçi Bildirimler</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="notificationFrequency" class="form-label">Bildirim Sıklığı</label>
+                            <select class="form-select" id="notificationFrequency">
+                                <option value="immediate" selected>Anında</option>
+                                <option value="daily">Günlük</option>
+                                <option value="weekly">Haftalık</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-save">
+                            <i class="bi bi-save me-2"></i>Kaydet
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="backup" role="tabpanel" aria-labelledby="backup-tab">
+            <div class="card">
+                <div class="card-header">
+                    <i class="bi bi-cloud-arrow-up me-2"></i>Yedekleme
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <button class="btn btn-save mb-3">
+                            <i class="bi bi-cloud-arrow-up me-2"></i>Yedek Oluştur
+                        </button>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Yedek Adı</th>
+                                        <th>Tarih</th>
+                                        <th>Boyut</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Yedek_2024_04_12</td>
+                                        <td>12.04.2024 15:30</td>
+                                        <td>2.5 MB</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary me-1">
+                                                <i class="bi bi-download"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-success me-1">
+                                                <i class="bi bi-arrow-counterclockwise"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -4715,11 +4715,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/ZimmetGo.csproj",
+      "projectUniqueName": "/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/ZimmetGo.csproj",
       "projectName": "ZimmetGo",
-      "projectPath": "/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/ZimmetGo.csproj",
+      "projectPath": "/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/ZimmetGo.csproj",
       "packagesPath": "/Users/ozkaya.gkhn/.nuget/packages/",
-      "outputPath": "/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/obj/",
+      "outputPath": "/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ozkaya.gkhn/.nuget/NuGet/NuGet.Config"

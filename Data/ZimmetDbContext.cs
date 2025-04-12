@@ -3,29 +3,26 @@ using ZimmetGo.Models; // Model sınıflarının bulunduğu namespace
 
 namespace ZimmetGo.Data
 {
-  
-
     public class ZimmetDbContext : DbContext
     {
-        public ZimmetDbContext(DbContextOptions<ZimmetDbContext> options) : base(options) {}
+        public ZimmetDbContext(DbContextOptions<ZimmetDbContext> options) : base(options) { }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<BakimKaydi>()
-                .HasKey(b => b.BakimID);
-            base.OnModelCreating(modelBuilder);
-
+            // Anahtarların belirlenmesi
             modelBuilder.Entity<BakimKaydi>()
                 .HasKey(b => b.BakimID);
 
             modelBuilder.Entity<DemirbasDemirbasTuru>()
                 .HasKey(x => new { x.DemirbasID, x.DemirbasTuruID });
+
             modelBuilder.Entity<DemirbasDurumGecmisi>()
                 .HasKey(d => d.DurumGecmisiID);
-
         }
         
+        // DbSet'ler
         public DbSet<Firma> Firmalar { get; set; }
         public DbSet<Rol> Roller { get; set; }
         public DbSet<Lokasyon> Lokasyonlar { get; set; }
@@ -40,5 +37,4 @@ namespace ZimmetGo.Data
         public DbSet<DemirbasDurumGecmisi> DemirbasDurumGecmisleri { get; set; }
         public DbSet<Resim> Resimler { get; set; }
     }
-    
 }

@@ -1,10 +1,15 @@
-public class DemirbasDurumGecmisi
-{
-    public int DurumGecmisiID { get; set; }
-    public string Durum { get; set; }
-    public DateTime DegisiklikTarihi { get; set; }
-    public string Notlar { get; set; }
+using System;
 
-    public int DemirbasID { get; set; }
-    public Demirbas Demirbas { get; set; }
+namespace ZimmetGo.Models
+{
+    public class DemirbasDurumGecmisi
+    {
+        public int? DurumGecmisiID { get; set; }  // Nullable hale getirildi
+        public string Durum { get; set; }  // Nullable hale getirildi
+        public DateTime? DegisiklikTarihi { get; set; }  // Nullable hale getirildi
+        public string Notlar { get; set; }  // Nullable hale getirildi
+
+        public int? DemirbasID { get; set; }  // Nullable hale getirildi
+        public Demirbas Demirbas { get; set; }  // Nullable zaten
+    }
 }

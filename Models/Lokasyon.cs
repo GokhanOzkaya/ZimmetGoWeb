@@ -1,8 +1,13 @@
-public class Lokasyon
-{
-    public int LokasyonID { get; set; }
-    public string LokasyonAdı { get; set; }
-    public string Açıklama { get; set; }
+using System.Collections.Generic;
 
-    public ICollection<Demirbas> Demirbaslar { get; set; }
+namespace ZimmetGo.Models
+{
+    public class Lokasyon
+    {
+        public int? LokasyonID { get; set; } // Nullable hale getirildi
+        public string LokasyonAdı { get; set; } // String zaten nullable
+        public string Açıklama { get; set; } // String zaten nullable
+
+        public ICollection<Demirbas> Demirbaslar { get; set; }
+    }
 }

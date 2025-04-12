@@ -17,45 +17,69 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ZimmetGo
 build_property.RootNamespace = ZimmetGo
-build_property.ProjectDir = /Users/ozkaya.gkhn/RiderProjects/ZimmetGo/
+build_property.ProjectDir = /Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/ozkaya.gkhn/RiderProjects/ZimmetGo
+build_property.MSBuildProjectDirectory = /Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/Views/Account/Login.cshtml]
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/Views/Account/Register.cshtml]
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/Views/Home/Home.cshtml]
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Demirbas/DemirbasListesi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVtaXJiYXMvRGVtaXJiYXNMaXN0ZXNpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Home/Ayarlar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BeWFybGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Home/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Ib21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/Views/Shared/Error.cshtml]
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Home/KullaniciListesi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9LdWxsYW5pY2lMaXN0ZXNpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Home/Profil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcm9maWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Rapor/RaporListesi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmFwb3IvUmFwb3JMaXN0ZXNpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/Views/_ViewImports.cshtml]
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Zimmet/ZimmetListesi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvWmltbWV0L1ppbW1ldExpc3Rlc2kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/Views/_ViewStart.cshtml]
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ozkaya.gkhn/RiderProjects/ZimmetGo/Views/Shared/_Layout.cshtml]
+[/Users/ozkaya.gkhn/RiderProjects/ZimmetGoWeb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-18cwaz2qv9
